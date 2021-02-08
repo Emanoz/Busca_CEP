@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +27,15 @@ public class Activity_login extends AppCompatActivity {
 
         // Criação do banco de dados do projeto que contém os dados dos usuários pré inseridos
         AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "db_busca_cep").allowMainThreadQueries().fallbackToDestructiveMigration().build();
+        // Inserts de usuários pré definidos
+        try{
+            db.usuarioDAO().insert(new UsuarioEntity(1, "Tantto", "123456"));
+            db.usuarioDAO().insert(new UsuarioEntity(2, "Emanuel", "1234567"));
+            db.usuarioDAO().insert(new UsuarioEntity(3, "Lucas", "123"));
+        } catch (SQLiteConstraintException ex){
+            Log.i("Usuários já inseridos", "OK");
+        }
+
         UsuarioController usuarioController = new UsuarioController(db);
 
         // Verifica se há um usuário já logado

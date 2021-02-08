@@ -12,11 +12,6 @@ public class UsuarioController {
     public UsuarioController(AppDatabase db){
         this.db = db;
         usuarioDAO = this.db.usuarioDAO();
-
-        // Inserts de usuários pré definidos
-        //db.usuarioDAO().insert(new UsuarioEntity(1, "Tantto", "123456"));
-        //db.usuarioDAO().insert(new UsuarioEntity(2, "Emanuel", "1234567"));
-        //db.usuarioDAO().insert(new UsuarioEntity(3, "Lucas", "123"));
     }
 
     public boolean autenticaUsuario(String usuario_nome, String senha){
