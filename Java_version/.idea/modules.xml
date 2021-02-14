@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Busca_CEP.iml" filepath="$PROJECT_DIR$/.idea/modules/Busca_CEP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Busca_CEP.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Busca_CEP.app.iml" />
+    </modules>
+  </component>
+</project>
